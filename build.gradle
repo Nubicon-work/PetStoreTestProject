@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.pet-store'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.8.0'
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.3.2'
+    implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.24.0'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+    implementation group: 'com.codeborne', name: 'selenide', version: '7.0.2'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.6.2'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.15.0'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '4.15.0'
+
+}
+
+test {
+    useTestNG()
+}
