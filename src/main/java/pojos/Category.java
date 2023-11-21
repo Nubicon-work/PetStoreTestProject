@@ -1,7 +1,15 @@
 package pojos;
 
-public class Category {
+import interfaces_and_abstract_classes.Entity;
 
-    public long id;
+public class Category extends Entity {
+
     public String name;
+
+    public Category(long id, String name) {
+        super(id);
+        this.name = name;
+    }
+
+    public Category() {}
 }

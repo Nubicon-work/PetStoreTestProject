@@ -5,15 +5,14 @@ import org.testng.annotations.Test;
 import pojos.Pet;
 import utils.Constants;
 import utils.pet.IO.PetWriter;
-import utils.pet.PetGenerator;
 
 import static io.restassured.RestAssured.given;
 
-public class CreateRandomPetPositiveTest {
+public class CreatePetWithNoParamsTest {
 
     @Test
-    public void createRandomPetPositiveTest() {
-        Pet pet = PetGenerator.getRandomPet();
+    public void createPetWithNoParamsTest() {
+        Pet pet = new Pet();
         given()
                 .when().contentType(ContentType.JSON)
                 .body(pet)

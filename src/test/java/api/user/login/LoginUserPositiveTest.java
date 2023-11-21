@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pojos.PetStoreAPIResponse;
 import pojos.User;
 import utils.Constants;
-import utils.UserReader;
+import utils.user.IO.UserReader;
 
 import static io.restassured.RestAssured.given;
 

@@ -9,11 +9,11 @@ import utils.pet.PetGenerator;
 
 import static io.restassured.RestAssured.given;
 
-public class CreateRandomPetPositiveTest {
+public class CreatePetWithMinimumParamsPositiveTest {
 
     @Test
-    public void createRandomPetPositiveTest() {
-        Pet pet = PetGenerator.getRandomPet();
+    public void createPetWithMinimumParamsPositiveTest() {
+        Pet pet = PetGenerator.getRandomPetWithIdNameAndStatus();
         given()
                 .when().contentType(ContentType.JSON)
                 .body(pet)

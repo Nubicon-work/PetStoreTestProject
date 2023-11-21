@@ -6,7 +6,8 @@ import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import pojos.User;
 import utils.Constants;
-import utils.Generator;
+import utils.user.UserGenerator;
+import utils.user.IO.UserWriter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ public class CreateListOfRandomUsersPositiveTest {
     public void createListOfRandomUsersPositiveTest() throws JsonProcessingException {
         List<User> users = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            users.add(Generator.getRandomUser());
+            users.add(UserGenerator.getRandomUser());
         }
         ObjectMapper mapper = new ObjectMapper();
         String body = mapper.writeValueAsString(users);
@@ -29,5 +30,6 @@ public class CreateListOfRandomUsersPositiveTest {
                 .post(Constants.baseUrl + "user/createWithList")
                 .then().log().all()
                 .assertThat().statusCode(200);
+        UserWriter.write(users);
     }
 }

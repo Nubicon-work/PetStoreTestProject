@@ -1,14 +1,12 @@
 package api.user.delete;
 
 import io.restassured.http.ContentType;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pojos.PetStoreAPIResponse;
 import pojos.User;
 import utils.Constants;
-import utils.Generator;
-import utils.UserReader;
-import utils.UserRemover;
+import utils.user.IO.UserReader;
+import utils.user.IO.UserRemover;
 
 import static io.restassured.RestAssured.given;
 

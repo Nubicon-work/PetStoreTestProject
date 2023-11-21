@@ -4,16 +4,14 @@ import io.restassured.http.ContentType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pojos.PetStoreAPIResponse;
-import pojos.User;
 import utils.Constants;
-import utils.UserReader;
 
 import static io.restassured.RestAssured.given;
 
 public class LogoutUserPositiveTest {
 
     @Test
-    public void LogoutUserPositiveTest() {
+    public void logoutUserPositiveTest() {
         PetStoreAPIResponse response = given()
                 .when().contentType(ContentType.JSON)
                 .get(Constants.baseUrl + "user/logout")

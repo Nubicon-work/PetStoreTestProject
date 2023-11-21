@@ -1,8 +1,9 @@
 package pojos;
 
-public class User {
+import interfaces_and_abstract_classes.Entity;
 
-    public long id;
+public class User extends Entity {
+
     public String username;
     public String firstName;
     public String lastName;
@@ -10,6 +11,12 @@ public class User {
     public String password;
     public String phone;
     public int userStatus;
+
+    public User() {}
+
+    public User(long id) {
+        super(id);
+    }
 
     @Override
     public String toString() {

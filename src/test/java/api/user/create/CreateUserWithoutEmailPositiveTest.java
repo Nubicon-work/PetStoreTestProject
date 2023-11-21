@@ -9,18 +9,18 @@ import utils.user.IO.UserWriter;
 
 import static io.restassured.RestAssured.given;
 
-public class CreateTemplateUserPositiveTest {
+public class CreateUserWithoutEmailPositiveTest {
 
     @Test
-    public void createTemplateUserPositiveTest() {
-        User user = UserGenerator.getTemplateUser();
-        int code = given()
+    public void createUserWithoutEmailPositiveTest() {
+        User user = UserGenerator.getRandomUser();
+        user.email = "";
+        given()
                 .when().contentType(ContentType.JSON)
                 .body(user)
                 .post(Constants.baseUrl + "user")
                 .then().log().all()
-                .assertThat().statusCode(200)
-                .extract().statusCode();
+                .assertThat().statusCode(200);
         UserWriter.write(user);
     }
 }

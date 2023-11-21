@@ -1,11 +1,15 @@
-package utils;
+package utils.user;
 
 import com.github.javafaker.Faker;
+import enums.PetStatus;
+import pojos.Category;
+import pojos.Pet;
+import pojos.Tag;
 import pojos.User;
 
 import java.util.Locale;
 
-public class Generator {
+public class UserGenerator {
 
     public static User getRandomUser() {
         Faker faker = new Faker(Locale.ENGLISH);

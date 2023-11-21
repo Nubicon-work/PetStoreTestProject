@@ -1,17 +1,18 @@
-package utils;
+package utils.pet.IO;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import pojos.User;
+import pojos.Pet;
+import utils.pet.PetNamer;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class UserWriter {
+public class PetWriter {
 
-    public static void write(User user) {
-        File file = UserNamer.getFileName(user);
+    public static void write(Pet pet) {
+        File file = PetNamer.getFileName(pet);
         try {
             file.createNewFile();
         } catch (IOException ex) {
@@ -20,12 +21,11 @@ public class UserWriter {
         String jsonString = "";
         try {
             ObjectMapper mapper = new ObjectMapper();
-            jsonString = mapper.writeValueAsString(user);
+            jsonString = mapper.writeValueAsString(pet);
         } catch (Exception ex) {
             System.out.println("\n\n\nMapping error message: " + ex.getMessage());
         }
         try (FileWriter writer = new FileWriter(file, false)) {
-
             writer.write(jsonString);
             writer.flush();
         } catch (IOException ex) {
@@ -33,15 +33,15 @@ public class UserWriter {
         }
     }
 
-    public static void write(User[] users) {
-        for (int i = 0; i < users.length; i++) {
-            write(users[i]);
+    public static void write(Pet[] pets) {
+        for (int i = 0; i < pets.length; i++) {
+            write(pets[i]);
         }
     }
 
-    public static void write(List<User> users) {
-        for (User user : users) {
-            write(user);
+    public static void write(List<Pet> pets) {
+        for (Pet pet : pets) {
+            write(pet);
         }
     }
 }

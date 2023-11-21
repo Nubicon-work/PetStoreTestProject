@@ -1,7 +1,15 @@
 package pojos;
 
-public class Tag {
+import interfaces_and_abstract_classes.Entity;
 
-    public long id;
+public class Tag extends Entity {
+
     public String name;
+
+    public Tag(long id, String name) {
+        super(id);
+        this.name = name;
+    }
+
+    public Tag() {}
 }
