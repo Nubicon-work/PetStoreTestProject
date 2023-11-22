@@ -47,4 +47,9 @@ public class PetGenerator {
                 return "available";
         }
     }
+
+    public static Tag getPetTag() {
+        Faker faker = new Faker(Locale.ENGLISH);
+        return new Tag(faker.random().nextLong(Long.MAX_VALUE), faker.hacker().noun());
+    }
 }

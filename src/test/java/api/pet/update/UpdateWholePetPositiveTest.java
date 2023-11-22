@@ -18,7 +18,7 @@ public class UpdateWholePetPositiveTest {
         given()
                 .when().contentType(ContentType.JSON)
                 .body(pet)
-                .post(Constants.baseUrl + "pet")
+                .put(Constants.baseUrl + "pet")
                 .then().log().all()
                 .assertThat().statusCode(200);
         PetWriter.write(pet);
