@@ -1,8 +1,8 @@
 package utils.user.IO;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
 import pojos.User;
-import utils.user.UserNamer;
+import utils.user.UserFileNamer;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -12,7 +12,7 @@ import java.util.List;
 public class UserWriter {
 
     public static void write(User user) {
-        File file = UserNamer.getFileName(user);
+        File file = UserFileNamer.getFileName(user);
         try {
             file.createNewFile();
         } catch (IOException ex) {

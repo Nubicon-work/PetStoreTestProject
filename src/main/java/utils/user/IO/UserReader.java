@@ -1,9 +1,9 @@
 package utils.user.IO;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
 import pojos.User;
 import utils.Constants;
-import utils.user.UserNamer;
+import utils.user.UserFileNamer;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -57,6 +57,6 @@ public class UserReader {
     }
 
     public static User read(User user) {
-        return read(UserNamer.getFileName(user));
+        return read(UserFileNamer.getFileName(user));
     }
 }

@@ -12,7 +12,7 @@ public class GetPetByIdNegativeTest {
 
     private final long id = 0;
 
-    @Test
+    @Test(groups = "pet")
     public void getPetByIdNegativeTest() {
         PetStoreAPIResponse response = given()
                 .get(Constants.baseUrl + "pet/" + id)

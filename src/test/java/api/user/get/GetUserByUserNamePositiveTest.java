@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 
 public class GetUserByUserNamePositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void getUserByUserNamePositiveTest() {
         User alex = given()
                 .get(Constants.baseUrl + "user/" + Constants.defaultUsername)

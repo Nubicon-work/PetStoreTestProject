@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class FindPetByStatusNegativeTest {
 
-    @Test
+    @Test(groups = "pet")
     public void findPetByStatusNegativeTest() {
         Pet[] pets = given()
                 .when().contentType(ContentType.JSON)

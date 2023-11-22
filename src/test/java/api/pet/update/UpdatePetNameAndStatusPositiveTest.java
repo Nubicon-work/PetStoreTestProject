@@ -1,29 +1,30 @@
 package api.pet.update;
 
-import enums.PetStatus;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pojos.Pet;
 import pojos.PetStoreAPIResponse;
 import utils.Constants;
 import utils.pet.IO.PetWriter;
+import utils.pet.PetGenerator;
 
 import static io.restassured.RestAssured.given;
 
-public class UpdatePetStatusPositiveTest {
+public class UpdatePetNameAndStatusPositiveTest {
 
     private final Long id = 5L;
 
     @Test(groups = "pet")
-    public void updatePetStatusPositiveTest() {
+    public void updatePetNameAndStatusPositiveTest() {
         Pet pet = given()
                 .get(Constants.baseUrl + "pet/" + id)
                 .then().log().all()
                 .assertThat().statusCode(200)
                 .extract().as(Pet.class);
-        pet.status = PetStatus.PENDING.getStatus();
+        pet.name = PetGenerator.getRandomPetName();
+        pet.status = PetGenerator.getOtherPetStatus(pet.status);
         PetStoreAPIResponse response = given()
-                .queryParam("status", pet.status)
+                .queryParam("name", pet.name)
                 .when()
                 .post(Constants.baseUrl + "pet/" + id)
                 .then().log().all()

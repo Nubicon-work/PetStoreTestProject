@@ -13,7 +13,7 @@ public class GetUserByUserNameNegativeTest {
 
     private String expectedMessage = "User not found";
 
-    @Test
+    @Test(groups = "user")
     public void getUserByUserNameNegativeTest() {
         String wrongUsername = String.valueOf(new java.util.Date());;
         PetStoreAPIResponse petStoreAPIResponse = given()

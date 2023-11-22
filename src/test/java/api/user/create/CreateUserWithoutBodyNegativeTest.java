@@ -10,11 +10,10 @@ import static io.restassured.RestAssured.given;
 
 public class CreateUserWithoutBodyNegativeTest {
 
-    @Test
+    @Test(groups = "user")
     public void createUserWithoutBodyNegativeTest() {
         PetStoreAPIResponse response = given()
                 .when().contentType(ContentType.JSON)
-                //no body is here...
                 .post(Constants.baseUrl + "user")
                 .then().log().all()
                 .assertThat().statusCode(405)

@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 
 public class UpdateRandomUserWithTheSameUsernamePositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void updateRandomUserWithTheSameUsernamePositiveTest() {
         User user = given()
                 .when().contentType(ContentType.JSON)

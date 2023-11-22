@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 
 public class LoginUserPositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void loginUserPositiveTest() {
         User user = UserReader.readRandom();
         StringBuilder uri = new StringBuilder(Constants.baseUrl).append("user/login?username=").append(user.username).append("&password=").append(user.password);

@@ -5,20 +5,16 @@ import org.testng.annotations.Test;
 import pojos.Pet;
 import utils.Constants;
 import utils.pet.IO.PetWriter;
+import utils.pet.PetGenerator;
 
 import static io.restassured.RestAssured.given;
 
 public class UpdateWholePetPositiveTest {
 
-    private final Long id = 1L;
-
-    @Test
+    @Test(groups = "pet")
     public void updateWholePetPositiveTest() {
-        Pet pet = given()
-                .get(Constants.baseUrl + "pet/" + id)
-                .then().log().all()
-                .assertThat().statusCode(200)
-                .extract().as(Pet.class);
+        Pet pet = PetGenerator.getRandomPet();
+        pet.id = 5;
         given()
                 .when().contentType(ContentType.JSON)
                 .body(pet)

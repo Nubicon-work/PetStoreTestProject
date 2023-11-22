@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 
 public class DeleteAllCreatedUsersTest {
 
-    @Test
+    @Test(groups = "user")
     public void deleteAllCreatedUsersTest() {
         File[] directory = new File(Constants.createdUsersDirectory).listFiles();
         for (int i = 0; i < directory.length; i++) {

@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 
 public class DeleteRandomUserPositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void deleteRandomUserPositiveTest() {
         User user = UserReader.readRandom();
         PetStoreAPIResponse response = given()

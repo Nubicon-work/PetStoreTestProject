@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class LogoutUserPositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void logoutUserPositiveTest() {
         PetStoreAPIResponse response = given()
                 .when().contentType(ContentType.JSON)

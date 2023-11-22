@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class CreateUserWithoutLastNamePositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void createUserWithoutLastNamePositiveTest() {
         User user = UserGenerator.getRandomUser();
         user.lastName = "";

@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class CreateTemplateUserPositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void createTemplateUserPositiveTest() {
         User user = UserGenerator.getTemplateUser();
         int code = given()

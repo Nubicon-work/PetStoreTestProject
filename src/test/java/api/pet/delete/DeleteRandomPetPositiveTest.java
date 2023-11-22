@@ -6,7 +6,7 @@ import static io.restassured.RestAssured.given;
 
 public class DeleteRandomPetPositiveTest {
 
-    @Test
+    @Test(groups = "pet")
     public void deleteRandomPetPositiveTest() {
 //        PetStoreAPIResponse response = given()
 //                .when().contentType(ContentType.JSON)

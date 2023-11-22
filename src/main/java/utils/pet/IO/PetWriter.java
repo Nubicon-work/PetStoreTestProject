@@ -1,8 +1,8 @@
 package utils.pet.IO;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
 import pojos.Pet;
-import utils.pet.PetNamer;
+import utils.pet.PetFileNamer;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -12,7 +12,7 @@ import java.util.List;
 public class PetWriter {
 
     public static void write(Pet pet) {
-        File file = PetNamer.getFileName(pet);
+        File file = PetFileNamer.getFileName(pet);
         try {
             file.createNewFile();
         } catch (IOException ex) {

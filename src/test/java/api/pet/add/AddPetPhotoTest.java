@@ -16,7 +16,7 @@ import static io.restassured.RestAssured.given;
 
 public class AddPetPhotoTest {
 
-    @Test
+    @Test(groups = "pet")
     public void addPetPhotoTest() {
         Pet pet = PetReader.readRandom();
         File photo = PetPhotoReader.readRandom();

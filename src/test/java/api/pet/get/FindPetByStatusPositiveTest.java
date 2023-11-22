@@ -3,6 +3,9 @@ package api.pet.get;
 import enums.PetStatus;
 import io.restassured.http.ContentType;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Factory;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pojos.Pet;
 import utils.Constants;
@@ -13,39 +16,25 @@ import static io.restassured.RestAssured.given;
 
 public class FindPetByStatusPositiveTest {
 
-    @Test
-    public void findPetBySoldStatusPositiveTest() {
-        Pet[] pets = given()
-                .when().contentType(ContentType.JSON)
-                .get(Constants.baseUrl + "pet/findByStatus?status=" + PetStatus.SOLD.getStatus())
-                .then().log().all()
-                .assertThat().statusCode(200)
-                .extract().as(Pet[].class);
-        Assert.assertTrue(pets.length > 0);
-        Arrays.stream(pets).forEach(x -> Assert.assertEquals(x.status, PetStatus.SOLD.getStatus()));
+    @DataProvider(name = "pet_statuses")
+    public Object[][] getPetStatuses() {
+        return new Object[][] {
+                {PetStatus.AVAILABLE},
+                {PetStatus.PENDING},
+                {PetStatus.SOLD}
+        };
     }
 
-    @Test
-    public void findPetByAvailableStatusPositiveTest() {
+    @Test(groups = "pet", dataProvider = "pet_statuses")
+    public void findPetBySoldStatusPositiveTest(PetStatus petStatus) {
         Pet[] pets = given()
                 .when().contentType(ContentType.JSON)
-                .get(Constants.baseUrl + "pet/findByStatus?status=" + PetStatus.AVAILABLE.getStatus())
+                .get(Constants.baseUrl + "pet/findByStatus?status=" + petStatus.getStatus())
                 .then().log().all()
                 .assertThat().statusCode(200)
                 .extract().as(Pet[].class);
         Assert.assertTrue(pets.length > 0);
-        Arrays.stream(pets).forEach(x -> Assert.assertEquals(x.status, PetStatus.AVAILABLE.getStatus()));
-    }
-
-    @Test
-    public void findPetByPendingStatusPositiveTest() {
-        Pet[] pets = given()
-                .when().contentType(ContentType.JSON)
-                .get(Constants.baseUrl + "pet/findByStatus?status=" + PetStatus.PENDING.getStatus())
-                .then().log().all()
-                .assertThat().statusCode(200)
-                .extract().as(Pet[].class);
-        Assert.assertTrue(pets.length > 0);
-        Arrays.stream(pets).forEach(x -> Assert.assertEquals(x.status, PetStatus.PENDING.getStatus()));
+        Arrays.stream(pets).forEach(x -> Assert.assertEquals(x.status, petStatus.getStatus()));
     }
 }
+

@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class CreateUserWithoutPasswordPositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void createUserWithoutUserNamePositiveTest() {
         User user = UserGenerator.getRandomUser();
         user.password = "";

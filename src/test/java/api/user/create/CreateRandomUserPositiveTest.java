@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class CreateRandomUserPositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void createRandomUserPositiveTest() {
         User user = UserGenerator.getRandomUser();
         given()

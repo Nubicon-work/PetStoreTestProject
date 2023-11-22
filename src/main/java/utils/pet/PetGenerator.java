@@ -5,7 +5,6 @@ import enums.PetStatus;
 import pojos.Category;
 import pojos.Pet;
 import pojos.Tag;
-import pojos.User;
 
 import java.util.Locale;
 
@@ -29,5 +28,23 @@ public class PetGenerator {
                 .setName(faker.cat().name())
                 .setStatus(PetStatus.AVAILABLE)
                 .build();
+    }
+
+    public static String getRandomPetName() {
+        Faker faker = new Faker(Locale.ENGLISH);
+        return faker.cat().name();
+    }
+
+    public static String getOtherPetStatus(String status) {
+        switch (status) {
+            case "available":
+                return "sold";
+            case "sold":
+                return "pending";
+            case "pending":
+                return "available";
+            default:
+                return "available";
+        }
     }
 }

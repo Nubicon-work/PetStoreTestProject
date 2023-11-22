@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class CreateUserWithoutEmailPositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void createUserWithoutEmailPositiveTest() {
         User user = UserGenerator.getRandomUser();
         user.email = "";

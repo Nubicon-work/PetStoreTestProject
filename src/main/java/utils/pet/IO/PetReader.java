@@ -1,11 +1,9 @@
 package utils.pet.IO;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
 import pojos.Pet;
-import pojos.User;
 import utils.Constants;
-import utils.pet.PetNamer;
-import utils.user.UserNamer;
+import utils.pet.PetFileNamer;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -59,6 +57,6 @@ public class PetReader {
     }
 
     public static Pet read(Pet pet) {
-        return read(PetNamer.getFileName(pet));
+        return read(PetFileNamer.getFileName(pet));
     }
 }

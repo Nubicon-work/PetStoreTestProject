@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pojos.Pet;
 import pojos.PetStoreAPIResponse;
 import utils.Constants;
+import utils.pet.IO.PetPhotoReader;
 import utils.pet.IO.PetReader;
 
 import java.io.File;
@@ -13,12 +14,12 @@ import java.util.Objects;
 
 import static io.restassured.RestAssured.given;
 
-public class AddPetNullPhotoTest {
+public class AddPetTagPositiveTest {
 
     @Test(groups = "pet")
-    public void adPetNullPhotoTest() {
+    public void addPetTagPositiveTest() {
         Pet pet = PetReader.readRandom();
-        File photo = new File(Constants.txtDirectory + "photo.txt");
+        File photo = PetPhotoReader.readRandom();
         PetStoreAPIResponse response = given()
                 .multiPart(photo)
                 .when().contentType(ContentType.MULTIPART)

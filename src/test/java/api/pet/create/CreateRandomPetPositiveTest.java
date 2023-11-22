@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class CreateRandomPetPositiveTest {
 
-    @Test
+    @Test(groups = "pet")
     public void createRandomPetPositiveTest() {
         Pet pet = PetGenerator.getRandomPet();
         given()

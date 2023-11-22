@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class CreatePetWithMinimumParamsPositiveTest {
 
-    @Test
+    @Test(groups = "pet")
     public void createPetWithMinimumParamsPositiveTest() {
         Pet pet = PetGenerator.getRandomPetWithIdNameAndStatus();
         given()

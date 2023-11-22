@@ -6,7 +6,7 @@ import interfaces_and_abstract_classes.Entity;
 import java.util.ArrayList;
 
 public class Pet extends Entity {
-;
+
     public Category category;
     public String name;
     public ArrayList<String> photoUrls;

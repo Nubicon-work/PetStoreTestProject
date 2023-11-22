@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class CreatePetWithNoParamsTest {
 
-    @Test
+    @Test(groups = "pet")
     public void createPetWithNoParamsTest() {
         Pet pet = new Pet();
         given()

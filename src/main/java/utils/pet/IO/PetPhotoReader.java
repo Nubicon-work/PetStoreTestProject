@@ -1,12 +1,8 @@
 package utils.pet.IO;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import pojos.User;
 import utils.Constants;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.util.Random;
 
 public class PetPhotoReader {

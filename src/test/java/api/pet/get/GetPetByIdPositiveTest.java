@@ -11,7 +11,7 @@ public class GetPetByIdPositiveTest {
 
     private final long id = 5;
 
-    @Test
+    @Test(groups = "pet")
     public void getPetByIdPositiveTest() {
         Pet pet = given()
                 .get(Constants.baseUrl + "pet/" + id)

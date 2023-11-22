@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class UpdateRandomUserPositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void updateRandomUserPositiveTest() {
         User user = given()
                 .when().contentType(ContentType.JSON)

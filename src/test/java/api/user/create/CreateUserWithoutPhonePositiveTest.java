@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class CreateUserWithoutPhonePositiveTest {
 
-    @Test
+    @Test(groups = "user")
     public void createUserWithoutPhonePositiveTest() {
         User user = UserGenerator.getRandomUser();
         user.phone = "";
