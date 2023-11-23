@@ -1,0 +1,94 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "user_tests">
+    <test name = "CreateAlreadyExistedUserPositiveTest">
+        <classes>
+            <class name="api.user.create.CreateAlreadyExistedUserPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "CreateArrayOfRandomUsersPositiveTest">
+        <classes>
+            <class name="api.user.create.CreateArrayOfRandomUsersPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "CreateListOfRandomUsersPositiveTest">
+        <classes>
+            <class name="api.user.create.CreateListOfRandomUsersPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "CreateRandomUserPositiveTest">
+        <classes>
+            <class name="api.user.create.CreateRandomUserPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "CreateUserWithoutBodyNegativeTest">
+        <classes>
+            <class name="api.user.create.CreateUserWithoutBodyNegativeTest"/>
+        </classes>
+    </test>
+    <test name = "CreateUserWithoutEmailPositiveTest">
+        <classes>
+            <class name="api.user.create.CreateUserWithoutEmailPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "CreateUserWithoutFirstNamePositiveTest">
+        <classes>
+            <class name="api.user.create.CreateUserWithoutFirstNamePositiveTest"/>
+        </classes>
+    </test>
+    <test name = "CreateUserWithoutLastNamePositiveTest">
+        <classes>
+            <class name="api.user.create.CreateUserWithoutLastNamePositiveTest"/>
+        </classes>
+    </test>
+    <test name = "CreateUserWithoutPasswordPositiveTest">
+        <classes>
+            <class name="api.user.create.CreateUserWithoutPasswordPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "CreateUserWithoutPhonePositiveTest">
+        <classes>
+            <class name="api.user.create.CreateUserWithoutPhonePositiveTest"/>
+        </classes>
+    </test>
+    <test name = "CreateUserWithoutUserNamePositiveTest">
+        <classes>
+            <class name="api.user.create.CreateUserWithoutUserNamePositiveTest"/>
+        </classes>
+    </test>
+    <test name = "DeleteRandomUserPositiveTest">
+        <classes>
+            <class name="api.user.delete.DeleteRandomUserPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "GetUserByUserNameNegativeTest">
+        <classes>
+            <class name="api.user.get.GetUserByUserNameNegativeTest"/>
+        </classes>
+    </test>
+    <test name = "GetUserByUserNamePositiveTest">
+        <classes>
+            <class name="api.user.get.GetUserByUserNamePositiveTest"/>
+        </classes>
+    </test>
+    <test name = "LoginUserPositiveTest">
+        <classes>
+            <class name="api.user.login.LoginUserPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "LogoutUserPositiveTest">
+        <classes>
+            <class name="api.user.logout.LogoutUserPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "UpdateRandomUserPositiveTest">
+        <classes>
+            <class name="api.user.update.UpdateRandomUserPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "UpdateRandomUserWithTheSameUsernamePositiveTest">
+        <classes>
+            <class name="api.user.update.UpdateRandomUserWithTheSameUsernamePositiveTest"/>
+        </classes>
+    </test>
+</suite>

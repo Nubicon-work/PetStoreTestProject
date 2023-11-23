@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" name="Suite" parallel="instances">
+    <suite-files>
+        <suite-file path="pet_testng.xml"/>
+        <suite-file path="store_testng.xml"/>
+        <suite-file path="user_testng.xml"/>
+    </suite-files>
+</suite>

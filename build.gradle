@@ -10,18 +10,28 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation group: 'org.testng', name: 'testng', version: '7.8.0'
     testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.3.2'
     implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.24.0'
-    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
     implementation group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.16.0'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
+    implementation group: 'com.beust', name: 'jcommander', version: '1.82'
 
 }
 
 test {
-    useTestNG()
+    useTestNG() {
+        testLogging.showStandardStreams = true
+        maxHeapSize = "1024m"
+        beforeTest { descriptor ->
+            logger.lifecycle("Running  test: " + descriptor)
+        }
+        onOutput { descriptor, event ->
+            logger.lifecycle(event.message)
+        }
+        suites("src/test/java/api/pet_testng.xml")
+        suites("src/test/java/api/store_testng.xml")
+        suites("src/test/java/api/user_testng.xml")
+    }
 }

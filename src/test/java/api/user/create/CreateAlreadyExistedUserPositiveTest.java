@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class CreateAlreadyExistedUserPositiveTest {
 
-    @Test(groups = "user")
+    @Test(groups = "user", suiteName = "user")
     public void createAlreadyExistedUserPositiveTest() {
         User user = given()
                 .get(Constants.baseUrl + "user/" + Constants.defaultUsername)
