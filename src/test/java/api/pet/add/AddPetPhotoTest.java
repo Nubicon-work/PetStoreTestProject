@@ -2,6 +2,7 @@ package api.pet.add;
 
 import io.restassured.http.ContentType;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pojos.Pet;
 import pojos.PetStoreAPIResponse;
@@ -16,14 +17,25 @@ import static io.restassured.RestAssured.given;
 
 public class AddPetPhotoTest {
 
+    private final long id = 5;
+    private Pet pet;
+
+    @BeforeTest
+    public void getPetById() {
+        this.pet = given()
+                .get(Constants.baseUrl + "pet/" + id)
+                .then().log().all()
+                .assertThat().statusCode(200)
+                .extract().as(Pet.class);
+    }
+
     @Test(groups = "pet")
     public void addPetPhotoTest() {
-        Pet pet = PetReader.readRandom();
         File photo = PetPhotoReader.readRandom();
         PetStoreAPIResponse response = given()
                 .multiPart(photo)
                 .when().contentType(ContentType.MULTIPART)
-                .post(Constants.baseUrl + "pet/" + Objects.requireNonNull(pet).id + "/uploadImage")
+                .post(Constants.baseUrl + "pet/" + Objects.requireNonNull(this.pet).id + "/uploadImage")
                 .then().log().all()
                 .assertThat().statusCode(200)
                         .extract().as(PetStoreAPIResponse.class);

@@ -1,0 +1,34 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "store_tests">
+    <test name = "CreateRandomOrderPositiveTest">
+        <classes>
+            <class name="api.store.create.CreateRandomOrderPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "DeleteRandomOrderNegativeTest">
+        <classes>
+            <class name="api.store.delete.DeleteRandomOrderNegativeTest"/>
+        </classes>
+    </test>
+    <test name = "DeleteRandomOrderPositiveTest">
+        <classes>
+            <class name="api.store.delete.DeleteRandomOrderPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "GetOrderByIdNegativeTest">
+        <classes>
+            <class name="api.store.get.GetOrderByIdNegativeTest"/>
+        </classes>
+    </test>
+    <test name = "GetOrderByIdPositiveTest">
+        <classes>
+            <class name="api.store.get.GetOrderByIdPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "GetStoreInventoryTest">
+        <classes>
+            <class name="api.store.get.GetStoreInventoryTest"/>
+        </classes>
+    </test>
+</suite>

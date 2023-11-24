@@ -1,0 +1,84 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "pet_tests">
+    <test name = "AddPetNullPhotoTest">
+        <classes>
+            <class name="api.pet.add.AddPetNullPhotoTest"/>
+        </classes>
+    </test>
+    <test name = "AddPetPhotoTest">
+        <classes>
+            <class name="api.pet.add.AddPetPhotoTest"/>
+        </classes>
+    </test>
+    <test name = "AddPetTagPositiveTest">
+        <classes>
+            <class name="api.pet.add.AddPetTagPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "CreatePetWithMinimumParamsPositiveTest">
+        <classes>
+            <class name="api.pet.create.CreatePetWithMinimumParamsPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "CreatePetWithNoParamsTest">
+        <classes>
+            <class name="api.pet.create.CreatePetWithNoParamsTest"/>
+        </classes>
+    </test>
+    <test name = "CreateRandomPetPositiveTest">
+        <classes>
+            <class name="api.pet.create.CreateRandomPetPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "DeleteRandomPetPositiveTest">
+        <classes>
+            <class name="api.pet.delete.DeleteRandomPetPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "FindPetByStatusNegativeTest">
+        <classes>
+            <class name="api.pet.get.FindPetByStatusNegativeTest"/>
+        </classes>
+    </test>
+    <test name = "FindPetByStatusPositiveTest">
+        <classes>
+            <class name="api.pet.get.FindPetByStatusPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "GetPetByIdNegativeTest">
+        <classes>
+            <class name="api.pet.get.GetPetByIdNegativeTest"/>
+        </classes>
+    </test>
+    <test name = "GetPetByIdPositiveTest">
+        <classes>
+            <class name="api.pet.get.GetPetByIdPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "UpdatePetNameAndStatusPositiveTest">
+        <classes>
+            <class name="api.pet.update.UpdatePetNameAndStatusPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "UpdatePetNamePositiveTest">
+        <classes>
+            <class name="api.pet.update.UpdatePetNamePositiveTest"/>
+        </classes>
+    </test>
+    <test name = "UpdatePetStatusPositiveTest">
+        <classes>
+            <class name="api.pet.update.UpdatePetStatusPositiveTest"/>
+        </classes>
+    </test>
+    <test name = "UpdatePetWithTheSamePetTest">
+        <classes>
+            <class name="api.pet.update.UpdatePetWithTheSamePetTest"/>
+        </classes>
+    </test>
+    <test name = "UpdateWholePetPositiveTest">
+        <classes>
+            <class name="api.pet.update.UpdateWholePetPositiveTest"/>
+        </classes>
+    </test>
+</suite>
