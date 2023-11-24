@@ -2,6 +2,7 @@ package api.user.login;
 
 import io.restassured.http.ContentType;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pojos.PetStoreAPIResponse;
 import pojos.User;
@@ -12,13 +13,24 @@ import static io.restassured.RestAssured.given;
 
 public class LoginUserPositiveTest {
 
+    private User user;
+
+    @BeforeTest
+    private void setUser() {
+        this.user = given()
+                .get(Constants.baseUrl + "user/" + Constants.defaultUsername)
+                .then().log().all()
+                .assertThat().statusCode(200)
+                .extract().as(User.class);
+    }
+
     @Test(groups = "user")
     public void loginUserPositiveTest() {
-        User user = UserReader.readRandom();
-        StringBuilder uri = new StringBuilder(Constants.baseUrl).append("user/login?username=").append(user.username).append("&password=").append(user.password);
         PetStoreAPIResponse response = given()
+                .queryParam("username", user.username)
+                .queryParam("password", user.password)
                 .when().contentType(ContentType.JSON)
-                .get(uri.toString())
+                .get(Constants.baseUrl + "user/login")
                 .then().log().all()
                 .assertThat().statusCode(200)
                 .extract().as(PetStoreAPIResponse.class);
